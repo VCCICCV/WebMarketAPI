@@ -1,0 +1,14 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/webmarket?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2b8 #beijing time
+    username: root
+    password: 666666
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true #?????????
+server:
+  port: 8850
