@@ -1,7 +1,9 @@
 package com.example.webmarketapi.mapper;
 
+import com.example.webmarketapi.entity.Banner;
 import com.example.webmarketapi.entity.Category;
 import org.apache.ibatis.annotations.Mapper;
+
 
 import java.util.List;
 
@@ -13,4 +15,6 @@ import java.util.List;
 @Mapper
 public interface CategoryMapper {
     List<Category> list();
+
+    List<Banner> getBannerListById(Integer id);
 }

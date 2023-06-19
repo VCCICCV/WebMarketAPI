@@ -1,13 +1,11 @@
 package com.example.webmarketapi.controller;
 
 import com.example.webmarketapi.common.Result;
+import com.example.webmarketapi.entity.Banner;
 import com.example.webmarketapi.entity.Category;
 import com.example.webmarketapi.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +24,10 @@ public class CategoryController {
     public Result list(){
         List<Category> list = categoryService.list();
         return Result.success(list);
+    }
+    @GetMapping("/banner/{id}")
+    public Result getBannerListById(@PathVariable ("id") Integer id){
+        List<Banner> bannerList = categoryService.getBannerListById(id);
+        return Result.success(bannerList);
     }
 }
